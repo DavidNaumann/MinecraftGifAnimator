@@ -109,6 +109,7 @@ def gif2txt(filename, maxLen=18, maxColumns=14, author='DavidTheNewKid', title =
     firstRun = 1
     updateColor = 0
     colorText = ""
+    utfencode = ""
     
     try:
         while 1:
@@ -138,10 +139,11 @@ def gif2txt(filename, maxLen=18, maxColumns=14, author='DavidTheNewKid', title =
                           if(newColor != lastColor):
                             currpage += colorText + "," + updateColorTextStr
                             lastColor = newColor
-                            print(lastColor)
                         firstRun = 0
                     else:
-                        currpage += chs[int(sum(rgb) / 3.0 / 256.0 * 16)]
+                        utfencode = chs[int(sum(rgb) / 3.0 / 256.0 * 16)]
+                        utfencode = utfencode.decode('utf8')
+                        currpage += utfencode
                 if(h < 13):
 									currpage = currpage + "\\\\n"
             if(with_color):
@@ -155,7 +157,6 @@ def gif2txt(filename, maxLen=18, maxColumns=14, author='DavidTheNewKid', title =
         pass
 		
     ''' pages:["{\"text\":\"Minecraft Tools book\\ntest\"}","{\"text\":\"test\"}"] '''
-    print(book[0])
     pagecounter = 1
     for page in book:
       if(pagecounter == 1):
@@ -170,10 +171,13 @@ def gif2txt(filename, maxLen=18, maxColumns=14, author='DavidTheNewKid', title =
     
     commandStr += bookStr
     
-    print(output_file)
-    file = open(output_file,"w")
-    file.write(commandStr)
-    file.close()
+    if(len(commandStr) > 32500):
+      print("Try to disable color mode if you have it enabled")
+      exit("Expected Error: The command/gif is to long to fit into the command block (32500 char limit)")
+    else:
+      file = open(output_file,"w")
+      file.write(commandStr)
+      file.close()
     
 
 def main():
