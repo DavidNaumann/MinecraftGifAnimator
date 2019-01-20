@@ -62,7 +62,7 @@ def minecraft_color_converter(rgb):
     
   return color
     
-def gif2txt(filename, maxLen=18, maxColumns=14, author='DavidTheNewKid', title = "Animated Book" ,output_file='output.txt', with_color=False,
+def gif2minecraft(filename, maxLen=18, maxColumns=14, author='DavidTheNewKid', title = "Animated Book" ,output_file='output.txt', with_color=False,
         green_screen_sensibility=None, reverse_green_screen=False):
     try:
         maxLen = int(maxLen)
@@ -220,7 +220,7 @@ def main():
     if args.green_screen_sensibility:
         args.color = True
 
-    gif2txt(
+    gif2minecraft(
         filename=args.filename,
         maxLen=args.maxLen,
         maxColumns = args.maxColumns,

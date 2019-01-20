@@ -1,21 +1,17 @@
-gif2txt
+gif2minecraft
 =======
 
-
-Original gif2text by: hit9 on Github
-
-Modified for Minecraft: DavidTheNewKid on discord
+Made by: DavidTheNewKid
 
 
 GIF image to minecraft book for animation in 1.14
 
-See also [img2txt](https://github.com/hit9/img2txt).
 
 USAGE
 -----
 
 ```
-usage: gif2txt.py [-h] [-l MAXLEN] [-c MAXCOLUMNS] [-a AUTHOR] [-t TITLE]
+usage: gif2minecraft.py [-h] [-l MAXLEN] [-c MAXCOLUMNS] [-a AUTHOR] [-t TITLE]
                   [-o OUTPUT] [-r] [-s GREEN_SCREEN_SENSIBILITY] [-u]
                   filename
 
@@ -43,7 +39,7 @@ optional arguments:
                         can still use -g option to set sensibility
 
   ex:
-    python gif2txt.py sample.gif -l 5 -c 10 -a DavidTheNewKid -t Nameofmybook -o sample.txt (takes the sample gif down to 5x10, sets author and title then outputs at sample.txt)
+    python gif2minecraft.py sample.gif -l 5 -c 10 -a DavidTheNewKid -t Nameofmybook -o sample.txt (takes the sample gif down to 5x10, sets author and title then outputs at sample.txt)
     
     Defaultly: the output will be output.txt and this is where you will go to pick up the command for MC
 ```
@@ -57,3 +53,8 @@ Requirements
 ```
 pip install -r requirements.txt
 ```
+
+-----------
+
+Original gif2text idea/code by: hit9 on Github
+See also [gif2txt](https://github.com/hit9/gif2txt).
