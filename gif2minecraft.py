@@ -112,7 +112,6 @@ def minecraft_color_converter(rgb):
   if (not (color == "yellow" or color == "gold" or color == "light_purple" or color == "dark_purple" or color == "dark_gray" or color == "gray" or color == "black")):
     tempColor = prefix + color
     color = tempColor
-  print(color)
   return color
     
 def gif2minecraft(filename, maxLen=19, maxColumns=15, author='DavidTheNewKid', title = "Animated Book" ,output_file='output.txt', with_color=False,
@@ -151,9 +150,6 @@ def gif2minecraft(filename, maxLen=19, maxColumns=15, author='DavidTheNewKid', t
     rateWidth = float(maxLen) / width
     width = int(rateWidth * width)
     height = int(rateHeight * height)
-    
-    print(width)
-    print(height)
 
     palette = img.getpalette()
     '''
