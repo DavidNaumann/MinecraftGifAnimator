@@ -1,6 +1,5 @@
 .*.sw[opn]
 *.html
-*.gif
 examples/*.html
 *.jpg
 *.png

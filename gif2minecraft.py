@@ -198,7 +198,14 @@ def gif2minecraft(filename, maxLen=19, maxColumns=15, author='DavidTheNewKid', t
                         rgb = (0, 255, 0)
                     if with_color:
                         '''Colors: ["[\"\",{\"text\":\"M\",\"color\":\"dark_red\"},{\"text\":\"inecraft Tools book\",\"color\":\"reset\"}]"]'''
-                        utfencode = "▇"
+                        if remove_black_background:
+                          if(lastColor == "black"):
+                            utfencode = " "
+                            currpage += utfencode
+                          else:
+                            utfencode = "▇"
+                        else:
+                          utfencode = "▇"
                         if isinstance(utfencode, bytes):
                           utfencode = utfencode.decode('utf-8')
                         currpage += utfencode
